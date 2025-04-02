@@ -4,6 +4,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import NavBar from './components/nav-bar'
 import News from './components/news'
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
 
@@ -11,8 +12,10 @@ function App() {
     <>
       <Header />
       <NavBar />
-      <Home />
-      <News />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/news" element={<News />} />
+      </Routes>
       <Footer />
     </>
   )
