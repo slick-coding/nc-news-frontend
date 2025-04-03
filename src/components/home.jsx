@@ -13,7 +13,7 @@ function Home({ articles }) {
                         }
                     })}
                 </section>
-                <Link to="/news"><h4>See more news.</h4></Link>
+                <Link to="/articles"><h4>See more news.</h4></Link>
             </section>
         </section>
     );

@@ -10,9 +10,18 @@ h1 {
   padding: 1em;
 }
 
-h4{
+.home-page h2 {
   padding: 0.5em
 }
+
+.home-page h4 {
+  padding: 0.5em
+}
+
+footer{
+  margin: 0.5em;
+}
+
 a {
   text-decoration: none;
   color: #000000;
@@ -29,16 +38,55 @@ a {
 }
 
 
-
 .article-card{
   padding: 0.5em;
   border-style: solid;
   border-color: red;
   border-radius: 15px;
   margin: 0.2em;
-
+  
 }
 
 .article-card img{
   width: 100%;
 }
+
+.article-page{
+  display: grid;
+  place-items: center;
+}
+
+.article-entry{
+  width: 90%;
+  display:grid;
+  grid-auto-flow: row;
+  grid-row-gap: 10px;
+  padding: 1em;
+  border-style: solid;
+  border-color: red;
+  border-radius: 15px;
+}
+
+.comment-section{
+  width: 90%;
+  display: grid;
+  place-items: center;
+  margin: 1em;
+  border-style: solid;
+  border-color: red;
+  border-radius: 15px;
+}
+
+.comment-section h4 {
+  padding: 0.5%;
+}
+
+.comment-card{
+  padding: 0.5em;
+  width: 95%;
+  border-style: solid;
+  border-color: rgb(171, 0, 0);
+  border-radius: 15px;
+  margin: 0.2em;
+}
+
