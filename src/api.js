@@ -27,4 +27,9 @@ const getComments = (params) => {
     })
 }
 
-export { getArticles, getArticle, getComments };
+const updateArticleVotes = (params) => {
+    const { article_id, inc_votes } = params;
+    return api.patch(`/articles/${article_id}`, {inc_votes})
+}
+
+export { getArticles, getArticle, getComments, updateArticleVotes };

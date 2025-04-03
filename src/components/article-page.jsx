@@ -6,19 +6,10 @@ import CommentSection from "./comment-section";
 
 
 function ArticlePage() {
-    const [article, setArticle] = useState([])
     const {article_id} = useParams()
-    
-    const params = {article_id}
-
-    useEffect(() => {
-        getArticle(params).then((article) => {
-            setArticle(article)
-        })
-    }, [])
 
     return  <section className="article-page">
-        <ArticleEntry article={article}/>
+        <ArticleEntry article_id={article_id}/>
         <CommentSection article_id={article_id}/>
     </section>
 }
