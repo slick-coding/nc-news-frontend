@@ -3,11 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Lato;
+  font-size: 20px;
 }
 
 h1 {
   text-align: center;
   padding: 1em;
+  font-size: 1.5rem;
 }
 
 .home-page h2 {
@@ -90,3 +92,7 @@ a {
   margin: 0.2em;
 }
 
+.vote-buttons button {
+  width: 10em;
+  height: 3em;
+}

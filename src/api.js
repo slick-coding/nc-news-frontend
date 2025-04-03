@@ -28,8 +28,8 @@ const getComments = (params) => {
 }
 
 const updateArticleVotes = (params) => {
-    const { article_id } = params;
-    return api.patch(`/articles/${article_id}`, {inc_votes: 1})
+    const { article_id, inc_votes } = params;
+    return api.patch(`/articles/${article_id}`, {inc_votes})
 }
 
 export { getArticles, getArticle, getComments, updateArticleVotes };
