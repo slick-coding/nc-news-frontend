@@ -5,10 +5,10 @@ const api = axios.create({
     timeout: 10000,
 });
 
-const getNews = (params) => {
-    return api.get("/articles", { params }).then(({ data: { items } }) => {
-        return items;
+const getArticles = (params) => {
+    return api.get("/articles").then(({ data: { articles } }) => {
+        return articles;
     });
 };
 
-export { getNews };
+export { getArticles };
