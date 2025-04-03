@@ -4,3 +4,25 @@
   box-sizing: border-box;
   font-family: Lato;
 }
+
+h1 {
+  text-align: center;
+  padding: 1em;
+}
+
+.news{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.article-card{
+  padding: 0.5em;
+  border-style: solid;
+  border-color: red;
+  border-radius: 15px;
+  margin: 0.2em;
+}
+
+.article-card img{
+  width: 100%;
+}
