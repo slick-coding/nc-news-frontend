@@ -32,4 +32,11 @@ const updateArticleVotes = (params) => {
     return api.patch(`/articles/${article_id}`, {inc_votes})
 }
 
-export { getArticles, getArticle, getComments, updateArticleVotes };
+const getUsers = () => {
+    return api.get(`/users`).then(({ data: { users } }) => {
+        return users
+    })
+}
+
+
+export { getArticles, getArticle, getComments, updateArticleVotes, getUsers};

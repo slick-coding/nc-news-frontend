@@ -96,3 +96,25 @@ a {
   width: 10em;
   height: 3em;
 }
+
+.user-profile{
+  margin: 5%;
+  display:grid;
+  place-items: center;
+  grid-auto-flow: row;
+}
+
+.user-profile img {
+  width: 20%;
+}
+
+.home-logo {
+  max-width: 5%;
+  max-height: 5%;
+}
+
+.user-card img{
+  max-width: 5%;
+  height: auto;
+
+}
