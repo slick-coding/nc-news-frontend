@@ -22,7 +22,7 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home articles={articles} />} />
         <Route path="/news" element={<News articles={articles}/>} />
       </Routes>
       <Footer />
