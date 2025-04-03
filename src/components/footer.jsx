@@ -1,5 +1,5 @@
 function Footer() {
-    return <p>Website written by Slick Coding.</p>
+    return <footer>Website written by Slick Coding.</footer>
 }
 
 export default Footer;

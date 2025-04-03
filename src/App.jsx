@@ -7,6 +7,7 @@ import News from './components/news'
 import { Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getArticles } from './api'
+import ArticlePage from './components/article-page'
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -22,8 +23,9 @@ function App() {
       <Header />
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/news" element={<News articles={articles}/>} />
+        <Route path="/" element={<Home articles={articles} />} />
+        <Route path="/articles" element={<News articles={articles}/>} />
+        <Route path="/articles/:article_id" element={<ArticlePage />} />
       </Routes>
       <Footer />
     </section>
