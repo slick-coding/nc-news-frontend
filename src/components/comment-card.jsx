@@ -4,6 +4,7 @@ import { deleteComment } from "../api";
 
 function CommentCard({ comment }) {
     const [deletionStatus, setDeletionStatus] = useState(0);
+    const [error, setError] = useState(null)
     let date = "";
 
     const votes = comment.votes ? comment.votes : 0;
@@ -20,8 +21,12 @@ function CommentCard({ comment }) {
 
     function handleDelete(event) {
         event.preventDefault();
-
-        deleteComment(comment.comment_id)
+        setDeletionStatus((currentStatus) => currentStatus + 1)
+        setError(null)
+        deleteComment(comment.comment_id).catch((err)=> {
+            setError("An error has occurred, please try again.")
+            setDeletionStatus((currentStatus) => currentStatus - 1)
+        })
     }
 
     return (
@@ -32,6 +37,7 @@ function CommentCard({ comment }) {
             {!deletionStatus ? <p>{votes} upvotes</p> : null}
             {!deletionStatus ? <p>{date}</p> : null}
             {comment.author === username && !deletionStatus ? <button onClick={handleDelete}>Delete Comment ❌</button> : null}
+            {error ? <p>{error}</p> : null}
         </section>
     );
 }
