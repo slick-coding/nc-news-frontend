@@ -1,12 +1,20 @@
-function CommentCard({comment}) {
-    const date = (new Date(comment.created_at)).toString().split(" ").slice(0,5).join(" ");
+function CommentCard({ comment }) {
+    let date = "";
 
-    return <section className="comment-card">
-        <h4>{comment.author}</h4>
-        <p>{comment.body}</p>
-        <p>{comment.votes} upvotes</p>
-        <p>{date}</p>
-    </section>
+    if (comment.created_at) {
+        date = new Date(comment.created_at).toString().split(" ").slice(0, 5).join(" ");
+    } else {
+        date = "Just posted.";
+    }
+
+    return (
+        <section className="comment-card">
+            <h4>{comment.author}</h4>
+            <p>{comment.body}</p>
+            {comment.votes ? <p>{comment.votes} upvotes</p> : <p>0 upvotes.</p>}
+            <p>{date}</p>
+        </section>
+    );
 }
 
 export default CommentCard;

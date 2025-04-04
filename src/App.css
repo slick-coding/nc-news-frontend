@@ -69,6 +69,10 @@ a {
   border-radius: 15px;
 }
 
+.article-entry img {
+  width: 100%;
+}
+
 .comment-section{
   width: 90%;
   display: grid;
