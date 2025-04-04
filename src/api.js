@@ -14,22 +14,34 @@ const getArticles = (params) => {
 const getArticle = (params) => {
     const { article_id } = params;
     return api
-        .get(`/articles/${article_id}`).then(({data: {articles}}) => {
+        .get(`/articles/${article_id}`)
+        .then(({ data: { articles } }) => {
             return articles;
-        }).catch((err)=>{
-            console.log(err)
+        })
+        .catch((err) => {
+            console.log(err);
         });
 };
 
 const getComments = (params) => {
     return api.get(`/articles/${params.article_id}/comments`).then(({ data: { comments } }) => {
-        return comments
-    })
-}
+        return comments;
+    });
+};
 
 const updateArticleVotes = (params) => {
     const { article_id, inc_votes } = params;
-    return api.patch(`/articles/${article_id}`, {inc_votes})
-}
+    return api.patch(`/articles/${article_id}`, { inc_votes });
+};
 
-export { getArticles, getArticle, getComments, updateArticleVotes };
+const getUsers = () => {
+    return api.get(`/users`).then(({ data: { users } }) => {
+        return users;
+    });
+};
+
+const postComment = (article_id, commentData) => {
+    return api.post(`/articles/${article_id}/comments`, commentData);
+};
+
+export { getArticles, getArticle, getComments, updateArticleVotes, getUsers, postComment };

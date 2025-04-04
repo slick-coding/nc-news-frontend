@@ -8,6 +8,7 @@ import { Route, Routes } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getArticles } from './api'
 import ArticlePage from './components/article-page'
+import UserProfile from './components/user-profile'
 
 function App() {
   const [articles, setArticles] = useState([])
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home articles={articles} />} />
         <Route path="/articles" element={<News articles={articles}/>} />
         <Route path="/articles/:article_id" element={<ArticlePage />} />
+        <Route path="/user" element={<UserProfile />} />
       </Routes>
       <Footer />
     </section>
